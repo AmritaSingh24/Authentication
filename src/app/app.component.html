@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm bg-dark">
+
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link text-light" routerLink="" *ngIf="!authService.loggedIn()">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" routerLink="register" *ngIf="!authService.loggedIn()">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" routerLink="" *ngIf="authService.loggedIn()" (click)="authService.logOut()">Logout</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
